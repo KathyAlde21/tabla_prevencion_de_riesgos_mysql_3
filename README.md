@@ -154,8 +154,10 @@ ALTER TABLE asistentes
   REFERENCES capacitacion (idcapacitacion)
   ON UPDATE CASCADE
   ON DELETE RESTRICT;
+```
+<img src="./img/consulta_1_ejecutada_asistentes.jpg" alt="consulta uno" style="width: 80%;">
 
-/* -------------------------------------------------------- */
+```SQL
 -- ASISTENTES: convertir PK a AUTO_INCREMENT
 ALTER TABLE asistentes
   MODIFY idasistentes INT NOT NULL AUTO_INCREMENT;
@@ -163,7 +165,6 @@ ALTER TABLE asistentes
 -- Asegurar el siguiente valor (actualmente llega hasta 15)
 ALTER TABLE asistentes AUTO_INCREMENT = 16;
 ```
-<img src="./img/consulta_1_ejecutada_asistentes.jpg" alt="consulta uno" style="width: 80%;">
 <img src="./img/consulta_1_ejecutada_capacitacion.jpg" alt="consulta uno" style="width: 80%;">
 
 
