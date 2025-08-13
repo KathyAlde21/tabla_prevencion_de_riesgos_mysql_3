@@ -95,25 +95,33 @@ VALUES
 └── 📁img
 │    ├── 📁wireframes
 │    │   └── wireframe_bbdd.jpg
-│    ├── consulta_uno.jpg
-│    ├── consulta_dos.jpg
-│    ├── consulta_tres.jpg
-│    ├── consulta_cuatro.jpg
-│    ├── consulta_cinco.jpg
+│    ├── consulta_1_ejecutada_asistentes.sql
+│    ├── consulta_1_ejecutada_capacitacion.sql
+│    ├── consulta_2_ejecutada.sql
+│    ├── consulta_3_ejecutada.sql
+│    ├── consulta_4_ejecutada.sql
+│    ├── consulta_5_ejecutada.sql
+│    ├── consulta_6_ejecutada.sql
 │    └── eer_diagram.jpg
 └── 📁mysql
+    ├── eer_diagram.mwb
     ├── 📁consultas
     │   ├── consulta_uno.sql
     │   ├── consulta_dos.sql
+    │   ├── consulta_dos_con_registros.sql
     │   ├── consulta_tres.sql
+    │   ├── consulta_tres_con_registros.sql
     │   ├── consulta_cuatro.sql
-    │   └── consulta_cinco.sql
+    │   ├── consulta_cuatro_con_registros.sql
+    │   ├── consulta_cinco.sql
+    │   ├── consulta_cinco_con_registros.sql
+    │   └── consulta_seis.sql
     ├── 📁tabla_capacitaciones
-    │   ├── creando_tabla_capacitacion.sql
-    │   └── ingresando_datos_tabla_capacitacion.sql
+    │   ├── tabla_capacitaciones.sql
+    │   └── alimentando_tabla_capacitaciones.sql
     └── 📁tabla_asistentes
-        ├── creando_tabla_asistentes.sql
-        └── ingresando_datos_tabla_asistentes.sql
+        ├── tabla_asistentes.sql
+        └── alimentando_tabla_asistentes.sql
 ```
 
 **<h3>:blue_book: Consultas ejecutadas:</h3>**
@@ -171,7 +179,7 @@ VALUES ('22222222-2', 'Martes', '18:00', 'Independencia', 75, 28);
 INSERT INTO capacitacion (rutcliente, dia, hora, lugar, duracion, cantidadasistentes)
 VALUES ('33333333-3', 'Jueves', '07:45', 'La Reina', 40, 9);
 ```
-<img src="./img/consulta_dos.jpg" alt="consulta dos" style="width: 80%;">
+<img src="./img/consulta_2_ejecutada.jpg" alt="consulta dos" style="width: 80%;">
 
 3. 5 INSERT en asistentes SIN indicar idasistentes
 
@@ -188,7 +196,7 @@ VALUES ('Pablo Cáceres', 29, 5);
 INSERT INTO asistentes (nombres, edad, capacitacion_idcapacitacion)
 VALUES ('Josefa Medina', 33, 7);
 ```
-<img src="./img/consulta_tres.jpg" alt="consulta tres" style="width: 80%;">
+<img src="./img/consulta_3_ejecutada.jpg" alt="consulta tres" style="width: 80%;">
 
 4. Restricción única sobre nombres en asistentes
 
@@ -196,7 +204,7 @@ VALUES ('Josefa Medina', 33, 7);
 ALTER TABLE asistentes
   ADD CONSTRAINT asistentes_nombres_uk UNIQUE (nombres);
 ```
-<img src="./img/consulta_cuatro.jpg" alt="consulta cuatro" style="width: 80%;">
+<img src="./img/consulta_4_ejecutada.jpg" alt="consulta cuatro" style="width: 80%;">
 
 5. Actualizar dia y hora cuando ambos son NULL
 
@@ -207,7 +215,7 @@ SET dia = '01/01/2020',
 WHERE dia IS NULL
   AND hora IS NULL;
 ```
-<img src="./img/consulta_cinco.jpg" alt="consulta cinco" style="width: 80%;">
+<img src="./img/consulta_5_ejecutada.jpg" alt="consulta cinco" style="width: 80%;">
 
 6. Eliminar capacitaciones sin asistentes (y con cantidadasistentes = 0)
 
@@ -234,7 +242,7 @@ WHERE idcapacitacion IN (
   ) AS t
 );
 ```
-<img src="./img/consulta_seis.jpg" alt="consulta seis" style="width: 80%;">
+<img src="./img/consulta_6_ejecutada.jpg" alt="consulta seis" style="width: 80%;">
 
 **<h3>:book: EER Diagram:</h3>**
 
